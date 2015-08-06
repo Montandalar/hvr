@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" >
+<meta charset="UTF-8">
 <link href="../folio_styles.css" rel="stylesheet">
-<title>D&amp;T Portfolio Assessment One</title>
-<style> tr:last-of-type > td {border-top: 1px solid grey}
-tr:last-child > td:first-child {font-weight: bold}
-</style>
+<title>D&amp;T MDP Portfolio</title>
 </head>
-<h2 id="TimeManagement">Action, Time and Finance Plans and their Application</h2>
-<h3>Time/Action Plan</h3>
-<h3>Finance Plan</h3>
-<p>It is necessary for the designer to consider the cost of their MDP in total, including all of the materials and other resources necessary to complete the project. In the case of designing a gamemode, this mostly concerns the software or game content that will be needed to see the MDP to its completion. Below is a table listing the resources needed for the MDP, their importance and their costs, with a total at the bottom.</p>
-<p>Note the reasoning behind the cost of each item. Items listed as (GNU GPL) are software licensed under the terms of the GNU General Public License, usually version 2. This means that they are free of cost and the source code is available to be modified. The Hammer editor, marked as (Source SDK) is included free of charge with any paid game that runs on the Source engine, which I already own.</p>
+
+<body>
+<h2>Evidence of Creativity</h2>
+
+<h3>Generation of Ideas</h3>
+<h4>Initial Inspiration</h4>
+<p>The initial inspiration for the design stems from my keen interest in computer games and programming. Being an interested player of Garry's Mod, and knowing the extensiveness of the modding community that work with Garry's Mod and other Source games, it occured to me to create another gamemode for Garry's Mod. Although there exist many gamemodes for Garry's Mod, it is the diversity of content available that is the main drawcard of Garry's Mod. To be able to add further to that diversity is a positive contribution to the community in my eyes.</p>
+<p>Along with contributing to the diversity of the game, my MDP is also an opportunity to show my ability to innovate in game design. While there are many gamemodes existing in the Garry's mod, many are variations on common themes; others fail to be original and simply bring some other universe or game to Garry's Mod. So the challenge still stands to make a gamemode that rivals the likes of DarkRP and TTT.</p>
+
+<h4>Design Development</h4>
+<p>When I began to think about my MDP, the idea of making a new gamemode seemed to involve using the parts of other gamemodes that the developers have done well, such as elements that are key to the players' enjoyment or are an interesting idea. My MDP would also have to have a sense of true originality stemming from its own unique features.</p>
+<p>The first developed idea that I came up with sprung from the idea of science fiction robots. The idea of a robot uprising seemed interesting to me as a setting for a round-based multiplayer game.</p>
+<p>Expanding upon the idea, I thought of some of the specifics of the gamemode. This is a list of the features that I wanted in my game:</p>
+<ul><li>Everyone should look like a human, to make it more of a challenge how to work out who is a human and who is not.
+    <li>Unlike TTT, nobody should know who is a human and who is a robot unless they figure it out.
+    <li>Both the humans and robots should have needs to attend to, similarly to Garry's Mod Stranded:
+    <ul><li>Humans should have thirst, hunger and sleep to attend to
+        <li>Robots should have oil, fragmentation and power</ul>
+    <li>The gamemode should be outwardly peaceful
+</ul>
+<p>After noting some of the interesting ideas found in Trouble in Terrorist Town, Garry's Mod Stranded and DarkRP, I began to consider some of their ideas:</p>
+<ul><li>A class/role system where players undergo different tasks. This would be secondary, in addiiton to the primary objective of the robot uprising.
+    <li>A crafting system for creating weapons or other game tools that would act to help them in the uprising.
+</ul>
+<p>I soon realised that to achieve the goals in my feature list, I would need to consider how to implement them, and I could record the implementation of them as a measure of progress in the project. This is shown in the table below:</p>
 <table>
-<thead> <th>Resource</th> <th>Importance</th> <th>Cost Reasoning</th> </thead>
-<tr>    <td>Source code editor: Notepad++</td> <td>To be able to create the source code for the gamemode</td> <td>0 (GNU GPL)</td> </tr>
-<tr>    <td>Source control system: git</td> <td>To manage the version control of the gamemode's code base, to be able to easily revert changes and not overwrite old versions of the software.</td> <td>0 (GNU GPL)</td> </tr>
-<tr>    <td>Garry's Mod</td> <td>Vitally important since the game is being modified as the MDP</td> <td>0 ($10 but already owned)</td> </tr>
-<tr>    <td>Counter-Strike: Source</td> <td>To utilise a wider range of stock resources to include in the gamemode. In particular, the materials, models and to a lesser extent audio files would be useful.</td> <td>$0/$20 ($20 but this came as a christmas gift)</td> </tr>
-<tr>    <td>Raster graphics editor: Gimp 2.8</td> <td>To be able to create new textures and materials for the gamemode.</td> <td>0 (GNU GPL)</td> </tr>
-<tr>    <td>Vector graphics editor: Inkscape </td> <td>For creating geometric graphic elements to be rendered at high resolutions in raster graphics.</td> <td>0 (GNU GPL)</td> </tr>
-<tr>    <td>Source Map editor: Hammer</td> <td>Used to create a map (game level) for the MDP that caters to the specific design of the gamemode.</td> <td>0 (Source SDK)</td>
-<tr>    <td>Totals:</td> <td>7 items</td> <td>$0</td> </tr>
+<thead> <tr> <td>Feature</td> <td>Requirements</td> <td>Date implemented (YYYY-MM-DD)</td> <td>Files added</td> </tr> </thead>
+<tbody>
+<tr> <td>Everyone to look human, but some are robots</td> <td>At the start of a round, the roles need to be chosen.</td> <td>NYI</td> <td></td> </tr>
+<tr> <td>Nobody to know who is a human or robot</td> <td>At the start of a round, each player is sent a message to tell them their role. No information is sent about others' roles.</td> <td>NYI</td> <td></td> </tr>
+<tr> <td>Needs systems for humans and robots</td> <td>Humans need: thirst, hunger, sleep. Robots need: oil, fragmentation, power.</td> <td>NYI</td> <td></td></tr>
+<tr> <td>Outwardly peaceful</td> <td>Restrictions on the number of weapons available. A weapon should be treated as valuable and suspicious.</td> <td>NYI</td> <td></td></tr>
+<tr> <td>Time-based rounds</td> <td>Several sequences of timers: Map start, pre-round, round, post-round. The pre-round timer should only expire when there are enough players to start the round.</td> <td>NYI</td> <td></td></tr>
+<tr> <td></td> <td></td> <td></td> <td></td></tr>
+<!-- <tr> <td></td> <td></td> <td></td> <td></td></tr> -->
+</tbody>
 </table>
+
+<h3>Exploration of Existing Ideas</h3>
+<p>There exist some gamemodes that contain elements that I will be including in my own MDP. This is due to the fact that I have chosen to re-use these elements in my own, as inevitably happens with systems of game mechanics. Since these are the most similar to my MDP, they will be the ones that I will explore.</p>
+<p><em>Trouble in Terrorist Town (TTT)</em> is the largest source of inspiration for the MDP. Its round-based nature, defaulting to ten minutes, is a good fit for the fast-paced action that an online gaming community may expect from Garry's Mod. The idea of detective work and the social construct of mistrust are key elements of TTT which provide interesting gameplay.</p>
+<p><em>Garry's Mod Stranded (GMS)</em> is the most similar example of a gamemode with needs and crafting systems. </p>
+
+<h3>Degree of Difference</h3>
+<p>The degree of difference from other gamemodes in my MDP stems from the unique blend of game mechanics that are found in many other games and mods. Moreover, the idea of a robot uprising is one that I have yet to see in any game that I personally have played. Gamers should find it interesting and hopefully not cliché, at least not as a game.</p>
+<p>What makes my gamemode different from the others?</p>
+<ul>
+    <li>The concept of a robot uprising portrayed in a game form.</li>
+    <li>The mystery of not knowing who is your friend and who is your ally, no matter your team.</li>
+    <li>The differentiated crafting system.</li>
+    <li>The outward peacefulness of few weapons.</li>
+</ul>
+
 </body>
 </html>
