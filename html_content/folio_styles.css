@@ -126,7 +126,7 @@ text-align: justify}
 
 /* Headings */
 
-h1, h2, h3 , h4, h5 {text-align: left; font-family: Sans; }
+h1, h2, h3 , h4, h5 {text-align: left; font-family: Arial; }
 h2, h3 , h4, h5 {font-family: Coolvetica; }
 h2, h3, h4 {font-weight: normal}
 h1 {font-size: 72pt;
