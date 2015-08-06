@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<link href="../folio_styles.css" rel="stylesheet">
+<title>D&amp;T MDP Portfolio</title>
+</head>
+
+<body>
+<h2>Application of Conclusions</h2>
+
+<h3>Conclusions: Design Specification</h3>
+<p>This is the basic list of features that the gamemode needs as a design:</p>
+<table>
+<thead> <tr> <th>Feature</th> <th>Justification</th> </tr> </thead>
+<tbody>
+<tr> <td>Round timer</td> <td>To ensure that the game is complete within a certain time period.</td> </tr>
+<tr> <td>Player classes</td> <td>To divide the players into opposing forces.</td> </tr>
+<tr> <td>Three stat system</td> <td>To force players to take actions in order to replenish the stats, possibly revealing themselves in the process.</td> </tr>
+<tr> <td>Custom HUD</td> <td>Since the gamemode uses custom stats, this requires a new HUD to include this information.</td> </tr>
+<tr> <td>A map with stat-replenishing elements</td> <td>To satisfy the stats of humans and robots, which requires a map that includes appropriate element such as water sources and energy chargers.</td> </tr>
+<tr> <td>Identifiable corpses</td> <td>Once a player is dead, their human/robot status is revealed. This leads to group-enforced punishments for random kills.</td> </tr>
+<tr> <td>A means of eliminating other players</td> <td>To satisfy the game objective of eliminating the other team.</td> </tr>
+</tbody></table>
+
+<p>The following flowchart was created to guide the implementation of the gamemode, particularly the round system which is central to the gameplay experience:</p>
+<img src="../images/gamemode.svg" style="width:100%;margin-top:5mm">
+<p>However, it soon became apparent that this flow chart was inadequate for several reasons:</p>
+<ul>
+<li>It relies solely on specific periods of time between checking certain conditions, but the gamemode would be more efficient to use event-based triggers for such checks, for example only checking the number of connected players when a player connects or disconnects.</li>
+<li>It only details the round system in depth but leaves out other important information such as logic for managing players or networking information to the client.</li>
+<li>The names of certain variables and script files are subject to change as the gamemode develops and conventions are used, for example player_hvr_human.lua instead of humans.lua</li>
+</ul>
+
+<h3>Conclusions: Development environment</h3>
+<p>This is a list of programs that I will use to develop the gamemode:</p>
+<table>
+<thead> <tr> <th>Program</th> <th>Use of program</th> <th>Reasoning</th> </tr> </thead>
+<tr> <td>Notepad++</td> <td>Source code editor</td> <td>The best editor is the editor is the editor of your preference, and I am highly familiar with Notepad++.</td> </tr>
+<tr> <td>git</td> <td>Source control system</td> <td>The only source control system with which I have experience. Easily hostable on GitHub.</td> </tr>
+<tr> <td>Inkscape</td> <td>Vector graphics editor</td> <td>Free as in freedom license. Useful set of features</td></tr>
+<tr> <td>The GIMP</td> <td>Raster graphics editor</td> <td>Same reasoning as Inkscape; raster and vector graphics features combined between the two are useful.</td> </tr>
+<tr> <td>Source map editor: Hammer</td> <td>Creation of map (game level) for the project</td> <td>The only reasonable level editor available for the gamemode.</td> </tr>
+</table>
+
+</body>
+</html>
