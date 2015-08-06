@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<link href="../folio_styles.css" rel="stylesheet">
+<title>D&amp;T MDP Portfolio</title>
+</head>
+
+<body>
+<h2>Appropriate Research and Experimentation of Materials, Tools and Techniques and Testing of Design Solutions</h2>
+
+<h3>Research</h3>
+<h4>Existing gamemode mechanics	</h4>
+<p>Since the design is a gamemode, several other existing gamemodes were studied to understand their mechanics and inner workings. The gamemodes chosen deliberately bear similarity to the hypothetical design.</p>
+<p><em>Garry's Mod Stranded</em> was studied most in-depth. This gamemode implements a needs system that the player must follow in order to ensure their continued survival. It uses hunger, health and sleep as constantly depleting needs which must be replenished periodically for the player to continue surviving. It also implemented a simple <em>Role-playing game (RPG)</em> system that included skill levels in areas such as Woodcutting, Planting and Mining. The idea of an RPG skills system, however, does not seem entirely appropriate for a gamemode with short rounds. But a more interesting skills minigame or button sequence for actions may find its way into the gamemode. Garry's Mod Stranded also included a crafting system for creating items from other materials, with the right equipment. This is another idea that may be interesting to include in my gamemode, so that the humans or robots could assemble weapons out of household items.</p>
+<p><em>Trouble in Terrorist Town</em> is one of the largest sources of inspiration for the gamemode. Its round-based nature and the detective work and mistrust involved are ideas that I have re-used for my own gamemode. However, my gamemode is still quite different in the way that the traitors (i.e. robots) must approach destroying the humans, and very likely the ratio of humans to robots compared to that of traitors to innocent.</p>
+<p><em>DarkRP</em> is the rival for first place with TTT in the number of players and servers available. It is a persistent world gamemode where players can take on 'jobs' that affect their role in the society. The theme is of course a 'dark' kind of roleplay, as the name suggests. DarkRP can be easily modified to add new jobs, items and weapons to customise and enhance the roleplaying experience. Default or <em>vanilla</em> DarkRP includes Gangsters, Gun Dealers, Drug Dealers, Doctors, Hobos and Citizens. The idea of jobs or roles may also find its way into my gamemode, since adds more depth to an outwardly peaceful world as in my gamemode. The technically good code base of DarkRP is also a standard to aim for, with the number of continual bugfixes and updates added to the gamemode and the ease with which it can be modified and extended, without modifying the original game code.</p>
+<h4>Scripting</h4>
+<p>Since I already have some knowledge in the fundamentals of programming and scripting, I have chosen to focus my programming research on the specifics of the lua language engine in Garry's Mod. This firstly involves familiarising myself with the specifics of the lua language as opposed to other languages. The <a href="http://lua-users.org/wiki/">lua-users wiki</a> is a very useful resource for learning about the nuances and specifics of the language. To familiarise myself with the language, I read the (rather dry) Lua Short Reference for Lua 5.1. This is a six-page document that very tersely outlines the core functionality of the lua language.</p>
+<p>I have found that the <a href="http://www.wiki.garrysmod.com">Garry's Mod Wiki</a> is a good reference material for the Application Programming Interface (API) exposed to the lua scripting engine that allows it to control the actions of the game. The wiki, developed mostly by Facepunch Studios, provides an invaluable resource for detailing the classes, enumerations, events, globals, hooks and libraries that are used in scripting objects, gamemodes et cetera in Garry's Mod. The wiki is best read together with lua scripts for research or as a reference when scripting. Although this wiki contains information on the specific uses of many core lua language features, the lua-users wiki was a more useful resource for that information.</p>
+<p>From reading existing source code and referencing the Garry's Mod Wiki, I have been enable to enhance my understanding of how to approach creating my own gamemode. The knowledge involved in this includes dealing with the many groups of functions that control various aspects of the game engine. This includes: Entities (interactive game objects), SWEPs (scripted weapons) and user interfaces (through vgui/derma/draw/surface) through their appropriate interfaces.</p>
+<h4>Source Engine Mapping</h4>
+<p>Since Garry's Mod runs on the Source Engine from Valve Software, it is useful for me to familiarise myself with the engine. This is important to me since I intend to create a map to suit the implementation of gamemode. The <a href="developer.valvesoftware.com/wiki/Main_page">Valve developer wiki</a> has a series of documentative and tutorial style articles on the topic of creating maps for the Source Engine. I found in particular the tutorial on creating a very basic map to be useful as a good starting point. The knowledge that I have gained from using the <em>Hammer</em> map editor to follow that tutorial, along with further reading and experimentation (see below) will be useful when I create my own map.</p>
+<h4>Version Control with git</h4>
+<p>Before I started my project, I needed to ensure two important things for the project: That I would be able to revert any bad changes to the source code and that I would be able to accurately trace the history of its development. To satisfy these requirements, I decided that I would have to use a version control system to manage my project's source code. The version control system I chose was git, because I had previously read how it was superior to other version control systems. Since I had no experience with other version control systems, I decided it was best to stick to git and attempt to learn version control by using it.</p>
+<p>To learn how to use git, I read the standard documentation that comes with the source code of the program. The <em>git tutorial</em> and <em>git everyday</em> articles were particularly useful for a start. The articles on specific git commands were also useful when learning the right way to invoke each git command. To learn more about git, I also experimented with it (see below).</p>
+
+<h3>Experimentation</h3>
+<h4>Experiment One: Hello, world!</h4>
+<p><strong>Aim</strong>: To create a very simple lua script that causes a short message to be displayed to the user.</p>
+<p><strong>Materials</strong>: Text editor, Garry's Mod.</p>
+<p><strong>Method</strong>:</p>
+<ol><li>Open the text editor and insert the following code:</li>
+<code class="block" style="background-color: inherit"><span class="sc13">print</span><span class="sc10">(</span><span class="sc11">CLIENT</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">hwPanel</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">vgui.Create</span><span class="sc10">(</span><span class="sc6">"DFrame"</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">SetPos</span><span class="sc10">(</span><span class="sc4">200</span><span class="sc10">,</span><span class="sc4">200</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">SetSize</span><span class="sc10">(</span><span class="sc4">400</span><span class="sc10">,</span><span class="sc4">300</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">SetTitle</span><span class="sc10">(</span><span class="sc6">"Hello world!"</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">SetVisible</span><span class="sc10">(</span><span class="sc5">true</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">SetDraggable</span><span class="sc10">(</span><span class="sc5">true</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">ShowCloseButton</span><span class="sc10">(</span><span class="sc5">true</span><span class="sc10">)</span><span class="sc0">
+</span><span class="sc11">hwPanel</span><span class="sc10">:</span><span class="sc11">MakePopup</span><span class="sc10">()</span>
+</code>
+<li>Save the script in as garrysmod/lua/hello_world.lua
+<li>Open Garry's Mod and create a new singleplayer game from the main menu in any gamemode
+<li>Type <code class="inline">lua_openscript_cl hello_world.lua</code> at the console</li>
+<img src="../images/ExperimentOne.jpg" alt="Experiment result: Success, the window appeared" style="width: 100%">
+<li>Take down any relevant notes on the default behaviour of the new vgui window</li>
+<li>Type <code class="inline concommmand">bind m "lua_openscript_cl hello_world.lua"</code> at the console to bind the m key to opening the script</li></ol>
+<p><strong>Results</strong>: The window appeared when I ran the script from the console. It had all of the expected properties that were specified in the script. It also caused my avatar to become immobile and unable to aim his weapon until I closed the window.</p>
+<p><strong>Conclusion</strong>: As I create the user interface for my gamemode, I can test its validity before I implement the in-game method of opening it by causing it to open with a script. I could also bind the command that runs this script to a key</p>
+
+<h4>Experiment Two: Get on my level</h4>
+<p><strong>Aim</strong>: To create a simple test map for the purpose of learning how to make a map.</p>
+<p><strong>Materials</strong>: Valve Developer wiki open in browser, Source SDK</p>
+<p><strong>Method:</strong></p>
+<ol><li>Open the Hammer editor for Half-Life 2.
+<li>Create six block brushes to act as boundaries for the map.
+<li>Set the materials on each of the walls to be a developer texture. Change the texture settings so that the textures are flipped correctly on each wall.
+<li>Set the material of the floor to be different from the material used for the walls. Set the material of the roof to the 2D skybox material.
+<li>Add a point light at the centre of the room near the ceiling and set its colour
+<li>Add a pool to the room: First, add an area of block brushes to bound the pool. Next, create a block brush that overlaps the boundaries of the pool slightly. Set the material to a water material.
+<li>Add a physics prop to the room
+<li>Add a static prop to the room
+<li>Add a world entity such as a door to the room
+<li>Save the level in the Garry's Mod folder. Build the level with hammer, but do not run Half-Life 2; instead, launch the map from Garry's Mod.
+</ol>
+
+<h4>Experiment Three: GUI Development</h4>
+<p><strong>Aim</strong>: To create a prototype of the Gamemode's Graphical User Interface</p>
+<p><strong>Materials</strong>: Text editor, Garry's Mod, graphics editor, file browser</p>
+<p><strong>Method:</strong></p>
+<h5>Part One: Graphical Prototyping</h5>
+<ol><li>Open Garry's Mod and start a singeplayer sandbox game on rp_downtown_v2 (a community-made map)</li>
+<li>Take a screenshot of an NPC:</li>
+<img src="../images/ExperimentThree-1.jpg" style="width: 100%">
+<p>This screenshot will be used to sketch the GUI.</p>
+<li>Open the screenshot in Inkscape. Draw a sketch of your interface:</li>
+<img src="../images/ExperimentThree-2.png" style="width: 100%">
+<p>The three bars here represent the three statics that a player must manage to continue surviving in the gamemode. The red is health, the green is energy and the third is the statistic specific to the player's class (human or robot). We can also see a round timer at the top. We can see that our fictional player "Bruce Bloggs" has 23% health.</p>
+<p>Now that I have created a graphical prototype of what I want my interface to look like, I will create a rough implementation of it in the game.</p>
+</ol>
+<h5>Part Two: Implementation</h5>
+<p>In my lua prototype, I am going to ensure that the interface is scalable to different screen resolutions. This is important since the coordinate system used to draw the interface is based on screen pixels in the game window. </p>
+<ol><li>Browse to the gamemodes folder ($GARRYSMOD/gamemodes/hvr/gamemode)</li>
+<li>Create any of these files that might be mising in the gamemode's code: cl_init.lua, cl_hud.lua and init.lua</li>
+<li>Open the above three files in the text editor and make sure the syntax highlighting is set to lua mode</li>
+<li>If the following lines of code are not already there, add them near the top of init.lua, nearby other calls to the same function:</li>
+<code class="block">AddCSLuaFile("cl_init.lua")
+AddCSLuaFile("cl_hud.lua") --This is needed so that the server will send this file to the client
+</code>
+<li>If it is not already there, add the following to cl_init.lua, nearby other calls to the same function:</li>
+<code class="block">include("cl_hud.lua") --This is needed so that this file will be executed by the client
+</code>
+<li>To the file cl_hud.lua, add this code:</li>
+<code class="block" style="background-color: inherit"><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">fs</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">32</span><span class="sc0">
+</span><span class="sc11">surface.CreateFont</span><span class="sc10">(</span><span class="sc6">"StatFont"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">font</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc6">"Coolvetica"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">size</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">fs</span><span class="sc10">})</span><span class="sc0">
+
+</span><span class="sc5">function</span><span class="sc0"> </span><span class="sc11">HUDPaintStats</span><span class="sc10">()</span><span class="sc0">
+    </span><span class="sc2">-- A check to see if the hud should be drawn
+</span><span class="sc0">    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">shouldDraw</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">GetConVar</span><span class="sc10">(</span><span class="sc6">"cl_drawhud"</span><span class="sc10">)</span><span class="sc0">
+    </span><span class="sc5">if</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc11">shouldDraw</span><span class="sc10">:</span><span class="sc11">GetInt</span><span class="sc10">()</span><span class="sc0"> </span><span class="sc10">==</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc5">then</span><span class="sc0"> </span><span class="sc5">return</span><span class="sc0"> </span><span class="sc5">end</span><span class="sc0">
+
+    </span><span class="sc1">--[=[ Local variables:
+    -- Screen dimensions, box dimensions,
+    -- rounding, a reference to the local player,
+    -- and an alphatransparency constant ]=]</span><span class="sc2">--
+</span><span class="sc0">    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">sw</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">ScrW</span><span class="sc10">();</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">sh</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">ScrH</span><span class="sc10">();</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">boxWidth</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.25</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">boxHeight</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.04</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">boxYPos</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.92</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">rnd</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.005</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">ply</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">LocalPlayer</span><span class="sc10">()</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">alpha</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">220</span><span class="sc0">
+
+    </span><span class="sc1">--[=[ Temporary testing variables
+    -- Real value for health, two contrived values for
+    -- stats and one for alphatransparency --]=]</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">hp</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">ply</span><span class="sc10">:</span><span class="sc11">Health</span><span class="sc10">()</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">twop</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.88</span><span class="sc0">  
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">threep</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">0.46</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">alpha</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc4">220</span><span class="sc0">
+
+    </span><span class="sc2">-- Health
+</span><span class="sc0">    </span><span class="sc2">-- Other stats are drawn similarly
+</span><span class="sc0">
+    </span><span class="sc2">-- Translucent black background
+</span><span class="sc0">    </span><span class="sc11">draw.RoundedBox</span><span class="sc10">(</span><span class="sc11">rnd</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc4">0.095</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0.915</span><span class="sc10">*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc10">(</span><span class="sc11">boxWidth</span><span class="sc10">+</span><span class="sc4">0.01</span><span class="sc10">)*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc11">boxHeight</span><span class="sc10">+</span><span class="sc4">0.01</span><span class="sc10">)*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">Color</span><span class="sc10">(</span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">alpha</span><span class="sc10">/</span><span class="sc4">2</span><span class="sc10">))</span><span class="sc0">
+
+    </span><span class="sc2">-- Black bar beneath the health bar
+</span><span class="sc0">    </span><span class="sc11">draw.RoundedBox</span><span class="sc10">(</span><span class="sc11">rnd</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc4">0.1</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">boxYPos</span><span class="sc10">*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">boxWidth</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">boxHeight</span><span class="sc10">*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">Color</span><span class="sc10">(</span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">alpha</span><span class="sc10">))</span><span class="sc0">
+
+    </span><span class="sc2">-- Red bar that scales for the player's health
+</span><span class="sc0">    </span><span class="sc11">draw.RoundedBox</span><span class="sc10">(</span><span class="sc11">rnd</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc4">0.1</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">boxYPos</span><span class="sc10">*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc10">(</span><span class="sc11">boxWidth</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">)*(</span><span class="sc11">hp</span><span class="sc10">*</span><span class="sc4">0.01</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc11">boxHeight</span><span class="sc10">*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">Color</span><span class="sc10">(</span><span class="sc4">150</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">alpha</span><span class="sc10">))</span><span class="sc0">
+
+    </span><span class="sc2">-- Labels 
+</span><span class="sc0">    </span><span class="sc11">draw.SimpleText</span><span class="sc10">(</span><span class="sc14">string.format</span><span class="sc10">(</span><span class="sc6">"Health: %d"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">hp</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc6">"StatFont"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">0.22</span><span class="sc10">*</span><span class="sc11">sw</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc10">(((</span><span class="sc11">boxHeight</span><span class="sc10">+</span><span class="sc11">boxYPos</span><span class="sc10">)+(</span><span class="sc11">boxYPos</span><span class="sc10">))/</span><span class="sc4">2</span><span class="sc10">)*</span><span class="sc11">sh</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">Color</span><span class="sc10">(</span><span class="sc4">255</span><span class="sc10">,</span><span class="sc4">255</span><span class="sc10">,</span><span class="sc4">255</span><span class="sc10">,</span><span class="sc11">alpha</span><span class="sc10">),</span><span class="sc0"> </span><span class="sc4">1</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc4">1</span><span class="sc10">)</span><span class="sc0">
+
+    <span class="sc2">-- Similarly for twop as the second stat and threep as the third stat</span>
+    ...
+<span class="sc5">end</span>
+
+</span><span class="sc11">hook.Add</span><span class="sc10">(</span><span class="sc6">"HUDPaint"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc6">"HUDPaint_Stats"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">HUDPaintStats</span><span class="sc10">)</span><span class="sc0">
+
+</span><span class="sc5">function</span><span class="sc0"> </span><span class="sc11">HUDBlockElements</span><span class="sc10">(</span><span class="sc11">name</span><span class="sc10">)</span><span class="sc0">
+    </span><span class="sc5">local</span><span class="sc0"> </span><span class="sc11">blockedElements</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc10">{</span><span class="sc11">CHudAmmo</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc5">true</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">CHudBattery</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc5">true</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">CHudHealth</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc5">true</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">CHudSecondaryAmmo</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc5">true</span><span class="sc10">}</span><span class="sc0">
+    </span><span class="sc5">if</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc11">blockedElements</span><span class="sc10">[</span><span class="sc11">name</span><span class="sc10">])</span><span class="sc0"> </span><span class="sc5">then</span><span class="sc0">
+        </span><span class="sc5">return</span><span class="sc0"> </span><span class="sc5">false</span><span class="sc0">
+    </span><span class="sc5">end</span><span class="sc0">
+</span><span class="sc5">end</span><span class="sc0">
+
+</span><span class="sc11">hook.Add</span><span class="sc10">(</span><span class="sc6">"HUDShouldDraw"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc6">"HUDBlockElements"</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">HUDBlockElements</span><span class="sc10">)</span></code>
+<li>Save any changes in the files and open Garry's Mod. Select the HvR gamemode and launch gm_construct.</li></ol>
+<p><strong>Result</strong>:</p>
+<img src="../images/ExperimentThree-3.jpg" style="width: 100%"/>
+</ol>
+<p><strong>Conclusion</strong>: Now that I have created an in-game prototype of the user interface with the three status bars, I can further extend and modify it later as needed.</p>
+
+<h4>Experiment Four: Using version control</h4>
+<p><strong>Aim</strong>: To learn how to use version control by experimenting with git, and to set up the git repository for the gamemode.</p>
+<p><strong>Materials</strong>: Text editor, MSYSgit source code, MSYSgit binaries, command shell, a working folder, a folder msysgit/ to contain the program.</p>
+<p><strong>Method</strong>:</p>
+<h5>Part One: Downloading and compiling git for Windows</h5>
+<ol>
+<li>Download the MSYSgit fork of the git source code, from <a href="https://github.com/msysgit/git">https://github.com/msysgit/git</a>.</li>
+<li>Download the MSYSgit build environment binaries, from <a href="https://github.com/msysgit/msysgit">https://github.com/msysgit/msysgit</a>.</li>
+<li>Extract the MSYSgit build environment to <code>.\msysgit\</code> in the working folder.</li>
+<li>Extract the MSYSgit fork of the git source code to <code>.\msysgit\git\</code>.</li>
+<li>Run <code>.\msysgit\msys.bat</code> to compile git from source with the binaries.</li>
+<li>Run this command at the bash prompt to set up your git authorship:</li>
+<code class="block"># Replace ${NAME} and ${EMAIL} with your full name and email address
+$ git config --add user.name ${NAME} && git config --add user.email ${EMAIL}</code>
+<li>Copy the msysgit folder to a USB storage device so that you can use git on different computers. When you want to run git in future, run <code>msys.bat</code> again.</li>
+</ol>
+<p><strong>Conclusion</strong>: MSYSgit is now compiled and ready to be used in the project.</p>
+
+<h5>Part Two: Experimenting on a set of files</h5>
+<ol>
+<li>Create a blank working directory, <code>gitfoo</code>, where you will make a new git repository. This will be referred to hereafter as the environment variable <code>${gitfoodir}</code> as in bash.</li>
+<li>Run msys.bat to open git. Run these shell commands at the bash prompt that appears:<br>
+<code class="block">cd ${gitfoodir} # To change the current directory to gitfoo
+git init # To create a new git repository </code></li>
+<li>Create a file <code>foo.txt</code> in the folder. Open it with a text editor and add the string "foo in a bar" followed by a newline. Save it.</li>
+<li>Run <code>git add foo.txt</code> to add foo.txt to the git index, followed by <code>git commit</code>. In the <code>vi</code> editor window that appears, write a message like 'Added foo.txt'.</code></li>
+<li>To view the project history, run <code>git log</code>. There will only be one commit so far:</li>
+<code class="block">$ git log
+commit 053be5d6ff888a520cc0f9f7d7e529d1ba507ce3
+Author: First Last <first.last@example.com>
+Date:   Mon May 4 12:02:44 2015 +1000
+
+    Added foo.txt
+</code>
+<li>Now edit foo.txt again, adding a new line: "A quux walked out of a bar". Then run these two commands:</li>
+<code class="block">$ git add foo.txt # Needs to be added for every commit
+$ git commit # To confirm our changes to the files again</code>
+<p class="noindent">Now <code>git log</code> will show that there have been two changes. At this stage, we know enough to be able to create a new git repository to track the source code of the gamemode.</p>
+</ol>
+<p><strong>Conclusion</strong>: Now that I have an idea of the basics of git, I can move on to more serious experimentation with it.</p>
+
+
+<h5>Part Three: Initialising and making small changes to a repository for the gamemode</h5>
+<ol>
+<li>To start the gamemode off, make its directory structure with this command at the bash command line for msysgit:</li>
+<code class="block">$ mkdir -p hvr-repo/gamemodes/hvr/{backgrounds,gamemode}</code>
+<li>To hvr-repo/ add the example <a href="https://raw.githubusercontent.com/garrynewman/gmad/master/addon.json">addon.json</a> file from the <code>gmad</code> github repository.</li>
+<li>To hvr-repo/gamemodes/hvr/, add the files hvr.txt, icon24.png and logo.png. The file hvr.txt should be a copy of the example text file from the <a href="http://wiki.garrysmod.com/page/Gamemode_Creation">Garry's Mod wiki<a>. icon24.png should be a 32x32 icon of the HvR logo. logo.png should be the wide form of the HvR logo (the HvR logo will be discussed in the step-by-step procedure).<p>hvr.txt is necessarry to give the game engine the information it needs to load the gamemode from the main menu. The other two files are the images that the game engine will display on the main menu to show the player that they have that gamemode selected.</p></li>
+<li>To hvr-repo/gamemodes/hvr/backgrounds/, add one or more placeholder background images in JPEG format. This is a quick way of distinguishing that we have HvR open on the main menu.</li>
+<li>To hvr-repo/gamemodes/hvr/gamemode/, add the blank files init.lua and cl_init.lua These three files will be the first parts that make up the gamemode's codebase.</li>
+<li>Since after the the D&T project is finished, the gamemode will be released to the public on the workshop, we need to easily allow for this upload. To this end, we add a file called addon.json in hvr-repo/. To start, this is a copy of the example <a href="http://wiki.garrysmod.com/page/Workshop_Addon_Creation">addon.json</a> from the workshop addon creation page on the Garry's Mod wiki.</li>
+<li>Now that all the files are in place, run <code>git init</code> in hvr-repo/</li>
+<li>Copy hvr-repo/gamemodes/hvr/ to garrysmod/gamemodes/hvr/. Launch Garry's Mod and switch to the new game mode:</li>
+<img style="width: 100%" src="../images/ExperimentFour-1.jpg">
+<li>Edit init.lua, adding <code>AddCSLuaFile("cl_init.lua")</code>.</li>
+<li>Edit cl_init.lua, adding print("Hello, world!"). Now this message will appear in the console next time we run the game.</li>
+<li>Run these shell commands in MSYSgit:</li>
+<code class="block">#Adds these two files to the index to track their changes in the next commit
+$ git add init.lua cl_init.lua
+#Commits the changes to the repository with a commit message
+$ git commit -m "Add a hello world message to the client"</code>
+<li>Copy the directory hvr-repo/gamemodes/hvr/ to the target garrysmod/gamemodes/hvr/ so that Garry's Mod can read it when you next launch the game.</li>
+<li>Run Garry's Mod singleplayer on an map, such as gm_construct and open the console:</li>
+<img style="width: 100%" src="../images/ExperimentFour-2.jpg">
+</ol>
+<p><strong>Conclusion</strong>: I am now able to use git to track the changes I make to my project as it develops. I have already created a repository which I will continue to use. I will learn to use more advanced features of git, such as branching and bisecting as they become useful to me.</p>
+
+</body>
+</html>
