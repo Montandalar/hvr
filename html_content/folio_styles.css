@@ -1,0 +1,246 @@
+/* @media rules */
+@media screen {
+ body {width:279mm}
+}
+
+@media print {
+ .pgbreakbefore {page-break-before: always}
+ 
+ h1,h2 {page-break-before: always}
+ h1[id^="t"] {page-break-before: auto}
+}
+
+/* @fonts in alphabetic filename order*/
+
+/* Disabled for now since coolvetica.ttf from gmod is better
+@font-face {
+ font-family: Coolvetica;
+ src: url("Coolvetica_Regular.ttf");
+ font-weight: 500;
+ font-style: normal;
+}
+*/
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/coolvetica.ttf");
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Bold.ttf");
+ font-weight: 600;
+ font-style: normal
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Bold_Italic.ttf");
+ font-weight: 600;
+ font-style: italic
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Book.ttf");
+ font-weight: 400;
+ font-style: normal
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Book_Italic.ttf");
+ font-weight: 400;
+ font-style: italic
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_ExtraLight.ttf");
+ font-weight: 200;
+ font-style: normal
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_ExtraLight_Italic.ttf");
+ font-weight: 200;
+ font-style: italic
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Heavy.ttf");
+ font-weight: 700;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Heavy_Italic.ttf");
+ font-weight: 700;
+ font-style: italic;
+} 
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Italic.ttf");
+ font-weight: 500;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Light.ttf");
+ font-weight: 300;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Light_Italic.ttf");
+ font-weight: 300;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Ultralight.ttf");
+ font-weight: 100;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: Coolvetica;
+ src: url("fonts/Coolvetica_Ultralight_Italic.ttf");
+ font-weight: 100;
+ font-style: italic;
+}
+
+
+/* Elements */
+body { font-family: Georgia;
+font-size: 11pt;
+text-align: justify}
+
+/* Headings */
+
+h1, h2, h3 , h4, h5 {text-align: left; font-family: Coolvetica; }
+h2, h3 , h4, h5 {font-family: Coolvetica; }
+h2, h3, h4 {font-weight: normal}
+h1 {font-size: 72pt;
+font-weight: bold;
+text-align: center}
+h1.foliosect {font-size: 36pt; margin-top: 0px; margin-bottom: 2mm; text-decoration: underline}
+h2 {font-size: 32pt; margin-top: 2mm; margin-bottom: 2mm; font-weight: 600}
+h3 {font-size: 24pt; margin-top: 1mm; margin-bottom: 1mm; font-weight: 500}
+h4 {font-size: 18pt; margin-top: 0.5mm; margin-bottom: 0.5mm; font-weight: 400}
+h5 {font-size: 18pt; margin-top: 0.25mm; margin-bottom: 0.25mm; font-weight: 300}
+
+/* Title elements */
+h1#t1 {text-shadow: 0.02em 0.02em 0.05em rgba(0, 0, 0, 0.4); margin-bottom:1em}
+h1#t2{text-shadow: 0.02em 0.02em 0.05em rgba(0, 0, 0, 0.8);
+font-weight:500; line-height:1}
+span#t2-1 {color:002bcc}
+span#t2-2 {color:d89500}
+span#t2-3 {color:b90000}
+
+p { margin-top: 1mm; margin-bottom: 1mm; text-indent: 2.5mm}
+p.noindent {text-indent: 0px}
+section.experiment { text-indent: 0mm !important}
+
+ul {margin-top:1mm;
+margin-bottom:0.5mm;
+padding-left: 5mm}
+ul > li > ul {margin-top: 0mm}
+
+/* Tabular elements */
+td {padding-left: 1mm; padding-right: 1mm;
+vertical-align: middle}
+td:not([bgcolor]){background-color: white}
+td:first-child {vertical-align: middle}
+
+th {background-color: #DDD; text-align: center; padding: 5px}
+table {background-color: black;
+text-align: left;
+margin-top: 12pt}
+td[colspan="3"] { background-color: #EEE;
+text-align: center;
+font-weight: bold }
+
+/* iframes */
+iframe { width: 32%;
+padding: 0; margin: 0;
+float: left;
+border-top: 15px ridge #222;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-bottom: 1px solid black;}
+
+iframe.completed {border-top-color: green}
+iframe.started  {border-top-color: #AA0}
+iframe.unstarted {border-top-color: blue}
+iframe.upcoming {border-top-color: #A00}
+
+div#sect1 {float:none}
+
+/* code elements */
+code {font-family: Courier New;
+font-size: 10pt}
+
+code.block {white-space: pre;
+border-left: 1px solid black;
+border-right: 1px solid #DDD;
+background-color: #D8ECF3;
+border-radius: 5px;
+padding-left: 1mm;
+display: block;
+margin-top:1.5mm; margin-bottom:1.5mm;}
+
+code.inline{display: inline}
+code.concommand {color: blue}
+span.git-commit-line {color:green}
+
+/* NppExport styles */
+code.block > span[style=""] {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal
+}
+
+a.appendix {text-decoration: none}
+
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	color: #008000;
+}
+.sc4 {
+	color: #FF8000;
+}
+.sc5 {
+	font-weight: bold;
+	color: #0000FF;
+}
+.sc6 {
+	color: #808080;
+}
+.sc10 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc11 {
+}
+.sc14 {
+	font-weight: bold;
+	color: #8000FF;
+}
+
+/* I heard Miss Wenzel likes a lot of boxes arond things...
+* {border: 1px solid black}
+ */
