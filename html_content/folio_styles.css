@@ -126,8 +126,8 @@ text-align: justify}
 
 /* Headings */
 
-h1, h2, h3 , h4, h5 {text-align: left; font-family: Arial; }
-h2, h3 , h4, h5 {font-family: Arial; }
+h1, h2, h3 , h4, h5 {text-align: left; font-family: Coolvetica; }
+h2, h3 , h4, h5 {font-family: Coolvetica; }
 h2, h3, h4 {font-weight: normal}
 h1 {font-size: 72pt;
 font-weight: bold;
@@ -137,6 +137,12 @@ h2 {font-size: 32pt; margin-top: 2mm; margin-bottom: 2mm; font-weight: 600}
 h3 {font-size: 24pt; margin-top: 1mm; margin-bottom: 1mm; font-weight: 500}
 h4 {font-size: 18pt; margin-top: 0.5mm; margin-bottom: 0.5mm; font-weight: 400}
 h5 {font-size: 18pt; margin-top: 0.25mm; margin-bottom: 0.25mm; font-weight: 300}
+
+/* Sectional styles for headings */
+
+section.sect1 > h2, section.sect1 > h3, h1#sect1_h {color: darkblue; text-shadow: 0.02em 0.01em 0.01em rgba(0,0,0,0.8)}
+section.sect2 > h2, section.sect2 > h3, h1#sect2_h {color: darkred; text-shadow: 0.02em 0.01em 0.01em rgba(0,0,0,0.8)}
+section.sect3 > h2, section.sect3 > h3, h1#sect3_h {color: darkgreen; text-shadow: 0.02em 0.01em 0.01em rgba(0,0,0,0.8)}
 
 /* Title elements */
 h1#t1 {text-shadow: 0.02em 0.02em 0.05em rgba(0, 0, 0, 0.4); margin-bottom:1em}
@@ -162,9 +168,11 @@ td:not([bgcolor]){background-color: white}
 td:first-child {vertical-align: middle}
 
 th {background-color: #DDD; text-align: center; padding: 5px}
+
 table {background-color: black;
 text-align: left;
 margin-top: 12pt}
+
 td[colspan="3"] { background-color: #EEE;
 text-align: center;
 font-weight: bold }
@@ -178,12 +186,17 @@ border-left: 1px solid black;
 border-right: 1px solid black;
 border-bottom: 1px solid black;}
 
+
 iframe.completed {border-top-color: green}
 iframe.started  {border-top-color: #AA0}
 iframe.unstarted {border-top-color: blue}
-iframe.upcoming {border-top-color: #A00}
+iframe.upcoming {border-top-color: red}
 
-div#sect1 {float:none}
+/*
+iframe.sect1 {border-top-color: darkblue}
+iframe.sect2 {border-top-color: darkred} 
+iframe.sect3 {border-top-color: darkgreen}
+*/
 
 /* code elements */
 code {font-family: Courier New;
@@ -240,7 +253,3 @@ a.appendix {text-decoration: none}
 	font-weight: bold;
 	color: #8000FF;
 }
-
-/* I heard Miss Wenzel likes a lot of boxes arond things...
-* {border: 1px solid black}
- */

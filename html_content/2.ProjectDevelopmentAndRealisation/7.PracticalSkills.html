@@ -7,12 +7,13 @@
 </head>
 
 <body>
+<section class="sect2">
 <h2>Evidence and Application of Practical Skills to Produce a Quality Product</h2>
-<p class="noindent">Throughout the course of the project, I was required to apply skills inluding:</p>
+<p class="noindent">Throughout the course of the project, I was required to apply skills including:</p>
 <ul><li>Lua scripting</li>
 <li>Effective use of version control</li>
 <li>Map creation</li>
-<li>Interface design &amp; implmentation</li></ul>
+<li>Interface design &amp; implementation</li></ul>
 <p class="noindent">Satisfying these required a certain degree of applied mathematics. This section will discuss the requirements for each of these skills and examples of their application. A step-by-step procedure is also given.</p>
 
 <h3>Discussion of Practical Skills Applied</h3>
@@ -23,7 +24,7 @@
 <img src="../images/Scripting_Process.svg" width="25%" style="float:left;margin-right:10mm">
 <ol>
 <li>Before the scripting implementation of a feature, it needs to be specified in detail.</li>
-<li>Once the specifiation is complete, calculations should be done on the numbers involved in implementing the feature.</li>
+<li>Once the specification is complete, calculations should be done on the numbers involved in implementing the feature.</li>
 <li>The lua implementation will almost always rely on knowing how to script the game engine to meet an end, so an API reference is essential to identify the functions, enumerations etc required for the feature. The values used in these functions and enumerations can come from the previous step.</li>
 <li>The required code, or a part thereof for large features, is written and then needs to be tested. This forms an iterative process where the script is tested then modified until it is bug-free.</li>
 <li>After this, the feature can be fleshed out or left as is.</li>
@@ -46,7 +47,7 @@ Date:   Mon May 18 11:44:34 2015 +1000
 </code>
 </code>
 <p>As I go through the process of scripting, testing, editing and testing again, I run the command <code>git commit -m "message"</code> incrementally after important changes, replacing "message" with a message that describes the changes made. This not only allows the history to be tracked, it also allows bad changes to be reverted to prior commits. Furthermore, if I find a bug in a later version I can track it back to an earlier version with <code>git bisect</code>.</p>
-<p>Another important feature of using version control is that I am able to branch my development with <code>git branch</code>. This command seperates any changes I make from the master branch, until such time as I discard the changes by deleting the branch, or merge them back into the main version. This is important especially when introducing a new feature, because any changes made will not affect the main version of the repository. Thus, I can also continue to make smaller changes to the main branch before I complete and merge the feature branch back in.</p>
+<p>Another important feature of using version control is that I am able to branch my development with <code>git branch</code>. This command separates any changes I make from the master branch, until such time as I discard the changes by deleting the branch, or merge them back into the main version. This is important especially when introducing a new feature, because any changes made will not affect the main version of the repository. Thus, I can also continue to make smaller changes to the main branch before I complete and merge the feature branch back in.</p>
 
 <h4>Map Creation</h4>
 <p>This section needs something here once you've done some mapping.</p>
@@ -64,7 +65,7 @@ Health_X = boxGap = 1/16 = 0.0625
 Twop_X   = 2*boxGap + boxWidth = 1/8 + 1/4 = 3/8 = 0.375
 Threep_X = 3*boxGap + 2*boxWidth = 3/16 + 1/2 = 11/16 = 0.6875</code>
 <p style="margin-bottom:5mm">In addition, the y-coordinate of each box was set a constant. The screen was described as being 1 unit wide since this allowed all of the coordinates to be expressed as a percentile value. This was important so that the interface, when implemented, would scale across resolutions.</p>
-<p>The last stage was to implement the interface in lua and test it in game. This was not, however, a straightforward process of simply implementing once and assuming all was good. Testing had to be done to ensure that the code was achieving its correct purpose. To this end, the file was edited, save, then tested continously until the interface was found to be working correctly. This screenshot represents an early version of the interface, after thoroughly debugging the first implementation:</p>
+<p>The last stage was to implement the interface in lua and test it in game. This was not, however, a straightforward process of simply implementing once and assuming all was good. Testing had to be done to ensure that the code was achieving its correct purpose. To this end, the file was edited, save, then tested continuously until the interface was found to be working correctly. This screenshot represents an early version of the interface, after thoroughly debugging the first implementation:</p>
 <p class="noindent">Note how the secondary and tertiary stats have constant values in this version, and that the round timer is absent as it has yet to be implemented.</p>
 <img src="../images/ExperimentThree-3.jpg" style="width:50%;margin-right:5mm;float:left">
 <img src="../images/HUD_Process.svg" width="25%" style="float:left">
@@ -75,5 +76,6 @@ Threep_X = 3*boxGap + 2*boxWidth = 3/16 + 1/2 = 11/16 = 0.6875</code>
 <li>Follow the steps in Experiment Four, Part Three from &sect;<em>Research and Experimentations</em></li>
 </ol>
 
+</section>
 </body>
 </html>

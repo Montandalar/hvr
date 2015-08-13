@@ -6,8 +6,47 @@
 </head>
 
 <body>
+<section class="sect3">
 <h2>Analysis And Evaluation of Functional and Aesthetic Aspects of Design</h2>
-<p></p>
 
+<h3>Functional Aspects of the Design</h3>
+<p>The bulk of the efforts in the implementation of the MDP went into this area due to the designer's skill and inclination in the area. Note that <strong>&sect;</strong>Evaluation of the HUD below evaluates the functional aspects of the HUD as well as its aesthetic aspects.</p>
+<p>The criteria for functional evaluation as identified in <strong>&sect;</strong>Evaluation Procedure appear in the evaluation table below.</p>
+<table>
+<thead> <tr> <th>Criterion</th> <th>Evaluation</th> </tr></thead>
+<tr> <td>The gamemode should start correctly and</td> <td>The gamemode does start correctly, whether it is loaded in singleplayer on the client or it is hosted on a dedicated server (a server which only emulates the game world but dos not visualise it). A listen server (where a client runs the server) has not been tested, but should work. The gamemode also does not require the client to have the HvR files before connecting to a server. This criterion is fulfilled.</tr>
+<tr> <td>The gamemode should work as intended, with as few bugs and issues as possible</td> <td>This criterion will be evaluated on a per-feature basis</td> </tr>
+<tr> <td>Round mechanics</td> <td>The round correctly cycles and reacts according to the number of connected players as well as ending the map after a number of rounds</td> </tr>
+<tr> <td>Stat mechanics</td> <td>The stats are networked correctly to the client, however there is no penalty for having stats fall to 0. The stats also fall too fast.</td> </tr>
+<tr> <td>Combat mechanics</td> <td>The loadout is too well-rounded. A player can heal themselves indefinitely with the medkit. The RPG also runs out of ammo after three shots, but kills a player instantly. On the other hand, the fists are underpowered and result in annoying combat. The combat fails the criteria.</td> </tr>
+</table>
+
+<h3>Evaluation of the HUD: Aesthetic Aspect of the Design</h3>
+<p>The aesthetic aspect of HvR that was made by the designer is the Heads Up Display (HUD). It is divided into several elements below:</p>
+<img src="../images/HUD_Eval.jpg" style="width:100%">
+<p>The criteria for aesthetic evaluation as identified in <strong>&sect;</strong>Evaluation Procedure were:</p>
+<ul><li><strong>The gamemode should stick to a consistent aesthetic feel</strong> and</li>
+<li><strong>high resolution resources should be used where available</strong>.</li></ul>
+<p>However, the second criterion is invalid as no additional textures or sound files were used in the MDP though at the time the criteria were written, they might have been.</p>
+
+<p>The following table describes and evaluates each element of the HUD in terms of function and aesthetics:</p>
+<table>
+<thead> <tr> <th>Element</th> <th>Description</th> <th>Evaluation</th> </tr> </thead>
+<tbody>
+  <tr> <td>1. Round state text</td> <td>Tells the player what state the round is at in text.</td> <td>On low resolution and/or 4:3 aspect ratio displays, the text will go through the round timer rather than wrap onto a second line, making this HUD element ineffective. The text also appears in a different font to the rest of the HUD as the size had to be reduced, causing the consistency of the HUD to fail.</td> </tr>
+  <tr> <td>2. Round timer</td> <td>Tells the player how much time is left before the round state changes</td> <td>Effectively communicates the time left in the round, using the standard Coolvetica font.</td></tr>
+  <tr> <td>3. End of map popup</td> <td>Recaps what happened in the rounds that occured in the current game level (map)</td> <td>The size of the text is much smaller than the size of the popup window, even on very low resolutions, and the text appears in another font. Note also that the text displayed says "the Humans won 0 round" [sic], which is grammatically incorrect. This user interface feature feels tacked-on.</td></tr>
+  <tr> <td>4. Robot indicator</td> <td>Tells the player whether they are a human, robot or unselected according to which number is present: 1 means a robot, 0 a human and -1 undecided</td> <td>Keeps the consistent font Coolvetica, but confuses the user as they should not be expected to know what the numbers mean. Instead, the HUD should say "Human" or "Robot".</td></tr>
+  <tr> <td>5. Stat bars</td> <td>Tells the player how much of each stat they have left. Health is common to both humans and robots, while the secondary (centre) and tertiary (rightmost) stats vary with their role.</td> <td>The stat bars scale to be the same size relative the overall game resolution. They were somewhat obtrusive, but their size has been minimised and now they fit nicely.</td></tr>
+</tbody>
+</table>
+
+<p>Note the following:</p>
+<ul>
+  <li>Not considered in the evaluation are the assets that come with Garry's Mod as these were not made by the designer.</li>
+  <li>If an official map had been created by the designer for the gamemode, its aesthetic appeal would have been evaluated. However this is not the case.</li>
+</ul>
+
+</section>
 </body>
 </html>

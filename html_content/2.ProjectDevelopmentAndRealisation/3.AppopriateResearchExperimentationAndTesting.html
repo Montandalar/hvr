@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<section class="sect2">
 <h2>Appropriate Research and Experimentation of Materials, Tools and Techniques and Testing of Design Solutions</h2>
 
 <h3>Research</h3>
@@ -83,7 +84,7 @@
 <h5>Part Two: Implementation</h5>
 <p>In my lua prototype, I am going to ensure that the interface is scalable to different screen resolutions. This is important since the coordinate system used to draw the interface is based on screen pixels in the game window. </p>
 <ol><li>Browse to the gamemodes folder ($GARRYSMOD/gamemodes/hvr/gamemode)</li>
-<li>Create any of these files that might be mising in the gamemode's code: cl_init.lua, cl_hud.lua and init.lua</li>
+<li>Create any of these files that might be missing in the gamemode's code: cl_init.lua, cl_hud.lua and init.lua</li>
 <li>Open the above three files in the text editor and make sure the syntax highlighting is set to lua mode</li>
 <li>If the following lines of code are not already there, add them near the top of init.lua, nearby other calls to the same function:</li>
 <code class="block">AddCSLuaFile("cl_init.lua")
@@ -237,5 +238,6 @@ $ git commit -m "Add a hello world message to the client"</code>
 </ol>
 <p><strong>Conclusion</strong>: I am now able to use git to track the changes I make to my project as it develops. I have already created a repository which I will continue to use. I will learn to use more advanced features of git, such as branching and bisecting as they become useful to me.</p>
 
+</section>
 </body>
 </html>
