@@ -1,0 +1,351 @@
+commit 60ac4b69d91c6836f333789434af30d46970e77f
+Merge: 349609f 6ff471c
+
+Date:   Wed Aug 5 22:34:11 2015 +1000
+
+    Merge https://github.com/Montandalar/hvr
+
+commit 6ff471c8d3e2146a86d01b78f3f961c8f09a1214
+
+Date:   Wed Aug 5 22:18:26 2015 +1000
+
+    Initial commit - stub
+
+commit 349609f7f531df4adf175b6dae9685d2a7869fe3
+
+Date:   Wed Aug 5 20:49:00 2015 +1000
+
+    Make hvr_status print RoundState information and update its help text
+
+commit d7a5786c82cdebecb4420196fc17cdf8bd261515
+
+Date:   Wed Aug 5 20:15:13 2015 +1000
+
+    Move player_class selection from GM:PlayerSpawn to new function HVR.ChoosePlayerRoles to be called in HVR.BeginRound. HVR.ChoosePlayerRoles will also select all players' roles randomly
+
+commit 197484c76cb88b8526627d77b963e0510a2ce589
+
+Date:   Wed Aug 5 19:43:30 2015 +1000
+
+    Update End of Map panel to use proper pluralisation
+
+commit 0aa4616296cbbadb0a039a7786e72193c1b16eaf
+
+Date:   Wed Aug 5 17:59:26 2015 +1000
+
+    Rearrange the client HUD code into several functions in the HVR namespace
+
+commit a688238f723ffad11346c15094eace01e0699b66
+
+Date:   Wed Aug 5 12:06:47 2015 +1000
+
+    Implement a system whereby the server will change levels after the config
+    variable RoundsLeft reaches zero and have a report display clientside
+    about which team won overall
+
+commit e7865ff2406039c97f07878db2c89da056d264d1
+
+Date:   Tue Aug 4 13:07:12 2015 +1000
+
+    Update HVR.PostRound to strip weapons and ammo and call a new function HVR.PreRound to handle the pre-round tasks
+
+commit b211d53b250319e3c89be6ea829ce6dda7e8156d
+
+Date:   Mon Aug 3 09:58:42 2015 +1000
+
+    Call PLAYER:Loadout in HVR.BeginRound and add check in PLAYER:Loadout to only run when RoundState == ROUND_CURRENT
+
+commit aba863e611d88d3b9f3511480757f6692d71de6f
+
+Date:   Thu Jul 30 12:18:49 2015 +1000
+
+    Remove unused constants from human and robot player classes
+
+commit e63304eee5c7db0b5c57d48f9cbbd0be5740aaa0
+
+Date:   Thu Jul 30 12:15:36 2015 +1000
+
+    Move player classes to be entirely serverside
+
+commit 963fe3212fe606b9354ca6c4d8f05dd16306b9d7
+
+Date:   Thu Jul 30 12:02:19 2015 +1000
+
+    Move rnd_status_update timer to HVR.RoundStatusUpdate() and make it call CheckForLiving and use the result for stalemate conditions
+
+commit ae39afe32e567304aebf85086d279a4c93b98991
+
+Date:   Wed Jul 29 17:07:09 2015 +1000
+
+    Move BeginRoundPrep timed function to HVR.BeginRound which uses rndtime as config variable to set timer
+
+commit 6d41340d315d6f960b5a769657bb897a06e2d1cf
+
+Date:   Wed Jul 29 17:00:36 2015 +1000
+
+    Add a 10s delay for ROUND_PREP before ROUND_CURRENT, under prep_time to be configured later
+
+commit 823b96627ec21ad7bf5b35f93e079e31932bcbfe
+
+Date:   Tue Jul 28 14:38:18 2015 +1000
+
+    Move HVR.CheckForLiving() to PostPlayerDeath hook so that players actually count as dead
+
+commit c30cb7a1a0c2796dddadb7a4b6bebf26b9765b71
+
+Date:   Mon Jul 27 11:52:17 2015 +1000
+
+    Share ROUND_* enums with client and have them display in the HUD with text messages
+
+commit 091ae7235597a883978361b35e57776aa845209a
+
+Date:   Thu Jul 23 12:25:38 2015 +1000
+
+    Replace magic numbers for RoundState with ROUND_* enumerations
+
+commit 021ee3a7e5b6d2bcd00cb658f3761259f78499e4
+
+Date:   Thu Jul 23 12:23:25 2015 +1000
+
+    Add hvr_endround concommand to forcibly end the round
+
+commit c67a66d2192b132d9fc8116be1fbedc1d356795f
+
+Date:   Wed Jul 22 17:25:53 2015 +1000
+
+    Make hvr_status print whether a player is alive
+
+commit 6889a97fbac6df5bf38c628cb8cc308d7ae962b9
+
+Date:   Wed Jul 22 17:07:18 2015 +1000
+
+    Add CheckForConnectedPlayers in PostRound() timer
+
+commit 86c4f4a3dd34c49ec0ccbdb76d341cc36bbfa277
+
+Date:   Wed Jul 22 16:35:22 2015 +1000
+
+    Respawn players after the end of the round
+
+commit 4ec2656fd298628cad3c8463893240d931d67490
+
+Date:   Mon Jul 20 10:08:43 2015 +1000
+
+    Add hvr_status concommand to list players and their classes
+
+commit 3686b67d8db9773981c0a4c66144e21d659d3277
+
+Date:   Thu Jul 16 14:40:11 2015 +1000
+
+    Add a new font 'HVR_SmallFont' and draw the RoundState in it
+
+commit dbd0f38f4003fec36f0c5c680b8bd6bb213078cf
+
+Date:   Fri Jul 10 11:57:55 2015 +1000
+
+    Move player-related functions to player.lua instead of init.lua
+
+commit 518b9b484cedc06009e9f234f0fea4a34e8d674e
+
+Date:   Thu Jul 9 16:07:30 2015 +1000
+
+    Add seperate check for living players and connected players
+
+commit b55e335f4c5c883e8b15eda165af162cda9bd6d1
+
+Date:   Thu Jul 9 10:25:56 2015 +1000
+
+    Network full Round* information to client, and add networked function for when a team wins to display on client
+
+commit 5a44a82b34afb20fefc11c1cf51346002074a027
+
+Date:   Thu Jul 9 09:01:42 2015 +1000
+
+    Make seconds in RoundTime display correctly with two digits at all times, and RoundTime not underflow
+
+commit afb7fa1e20635b02a6ac3e772ed05d28a0bc2e30
+
+Date:   Thu Jul 9 08:50:30 2015 +1000
+
+    Transmit integer RoundTime from client to server and display in HUD
+
+commit 941b732248a644042411292495a3ebb0cd256400
+
+Date:   Mon Jul 6 21:44:53 2015 +1000
+
+    Fixed hands appearing as the wrong skin tone. pl:SetupHands was using the old playermodel.
+
+commit 4209f0f3db378ae69712fbc1be4eaff151a492b1
+
+Date:   Mon Jul 6 20:34:10 2015 +1000
+
+    First attempt at solving bug where hands appear as the wrong skin tone
+
+commit d602f625e64d1ebe65fcbacf49d468ee843e8d63
+
+Date:   Mon Jul 6 18:12:27 2015 +1000
+
+    Remove useless code for PLAYER:SetModel()
+
+commit dd496f01b0f00d6d2f181b45b4724ceca74a810a
+
+Date:   Mon Jul 6 17:26:44 2015 +1000
+
+    Forcefully choose hands model from the player model
+
+commit 4457bc0570dd0011401a6c90e41af7208edcb005
+
+Date:   Mon Jul 6 16:34:49 2015 +1000
+
+    Merge base gamemode code for GM:PlayerSpawn()
+
+commit f57dee25508933716093e63de426d23e88805c21
+
+Date:   Mon Jul 6 12:14:20 2015 +1000
+
+    Fix CheckForPlayers to correctly compensate for #players being out by one
+
+commit 9d28f6702184dbd36ecf39606923e8f6513ad8d4
+
+Date:   Mon Jul 6 12:02:49 2015 +1000
+
+    Add checks for #players on connect and disconnect
+
+commit 719ce667a11e4620bdc4a827b5fb5ea1fafe8c3e
+
+Date:   Mon Jul 6 10:43:19 2015 +1000
+
+    Add config and round state globals
+
+commit 5194c70d356928642ef7abc6f8e5c5236953b503
+
+Date:   Mon Jul 6 10:16:29 2015 +1000
+
+    Specify gamemode information in shared.lua
+
+commit 7eaae52742d9e783dabe8caf6aa8dd4c822144ca
+
+Date:   Tue Jun 16 21:02:13 2015 +1000
+
+    Spawn with a random playermodel from Half-Life 2
+
+commit 4342fa0dd75e7c62fc432e81dd58c67c8f44ecf0
+
+Date:   Mon Jun 15 17:42:52 2015 +1000
+
+    Modify spawning to make it fit a ratio
+
+commit efd801d37351652714cae528cbeefc3133e815c3
+
+Date:   Mon Jun 15 17:18:40 2015 +1000
+
+    Make HUD not draw when LocalPlayer is dead
+
+commit b9b86cd110d8ca304b6635ab392c81477e02f045
+
+Date:   Sun Jun 14 16:33:17 2015 +1000
+
+    Make HUD not draw stat colour when stat = 0
+
+commit ec4835b98007f93ae1ed1721e662a0bc05cbee98
+
+Date:   Sun Jun 14 16:15:13 2015 +1000
+
+    Make stats drain over time
+
+commit 2d148db1b84b918c3c08862abcbcbaa6ab30c7e2
+
+Date:   Sun Jun 14 15:26:33 2015 +1000
+
+    Moved stat updates to the Player metatable
+
+commit 60e2a77cd89eb69eec6a191eedcb759801e9f8d1
+
+Date:   Sun Jun 14 14:26:54 2015 +1000
+
+    Display stats appropriate to player class by colour and string
+
+commit 2be4f6f7dcb317916b9912af347953b8f548d6c0
+
+Date:   Thu Jun 11 21:53:23 2015 +1000
+
+    Send clients their class and have it display in their HUD
+
+commit aa391383abd4b38a5a6d5676af8235dfb317e9f1
+
+Date:   Thu Jun 4 12:23:22 2015 +1000
+
+    Add random spawning as human or robot for testing
+
+commit 6abc3543f81167528ae693c79ce4c4adb00554dd
+
+Date:   Sat May 30 22:25:17 2015 +1000
+
+    Fix baseclass issues for player classes
+
+commit b56d59cd868190e134957567d37afe5803fd8ce8
+
+Date:   Sat May 30 21:15:57 2015 +1000
+
+    Add human and robot player classes
+
+commit 9caeb4c6113c5542068dab7e07a8c22119f024a1
+
+Date:   Sat May 30 19:18:42 2015 +1000
+
+    Implement player_hvr_baseclass player class in hvr_baseclass.lua and make
+    it the default class
+
+commit c1117e58c4fba19ece3100dd1a53aca4d0e8164e
+
+Date:   Thu Jun 11 12:42:27 2015 +1000
+
+    Update random stats for all players
+
+commit 089dc5e4da71ad139b8d9a05a96ed5831c355aca
+
+Date:   Wed Jun 10 22:23:44 2015 +1000
+
+    Have server send random stats to client and display them in HUD
+
+commit ee7f001fd48521892eeb21c99e2738bebbf0e488
+
+Date:   Wed Jun 10 22:15:50 2015 +1000
+
+    Convert cl_hud.lua to tabs not spaces
+
+commit 2c3d01b83678d58bd0fb192576c33b6ef385d119
+
+Date:   Wed Jun 10 21:31:21 2015 +1000
+
+    Add base_gmodentity to stop client addons complaining
+
+commit 9356d4a15538de152825a9cb10a18f659fc48607
+
+Date:   Tue Jun 9 13:36:14 2015 +1000
+
+    Add missing curly bracket at end of hvr.txt
+
+commit 86bb7a2d225d73dc379fb8f8c71bea11ae911287
+
+Date:   Wed May 20 17:24:40 2015 +1000
+
+    Fix HUD code and reduce boilerplate
+
+commit 0ef2a51d6f72d299bfd6848450c6f5271b79cb9b
+
+Date:   Mon May 18 11:44:34 2015 +1000
+
+    Commit non-code files to the repository
+
+commit 1def029371bd759c74f796684b22fc4860ba9786
+
+Date:   Mon May 18 11:23:49 2015 +1000
+
+    Merge HUD experiment code
+
+commit c5f5c650ce28f4d956277f656df638f03f93276c
+
+Date:   Fri May 8 14:35:39 2015 +1000
+
+    Add a hello world message to the client

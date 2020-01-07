@@ -1,0 +1,12 @@
+{
+	"title"		:	"Humans versus Robots",
+	"type"		:	"gamemode",
+	"tags"		:	[ "roleplay", "fun" ],
+	"ignore"	:
+	[
+		"*.git",
+		"*.psd",
+		"*.vcproj",
+		"*.svn*"
+	]
+}

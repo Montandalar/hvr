@@ -1,0 +1,11 @@
+"hvr"
+{
+	"base"		"base"
+	"title"		"Humans versus Robots"
+	"maps"		"^hvr_"
+	"menusystem"	"1"
+
+	"settings"
+	{
+	}
+}
